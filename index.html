@@ -18,6 +18,7 @@
       <li><a href="#home" class="nav-link active">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#credentials" class="nav-link">Credentials</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -82,10 +83,6 @@
 
       <div class="info-chips">
         <div class="chip">
-          <span class="num">6</span>
-          <span class="label">Projects planned</span>
-        </div>
-        <div class="chip">
           <span class="num">4th yr</span>
           <span class="label">BSIT student</span>
         </div>
@@ -103,86 +100,300 @@
     <h2>Personal and practice projects</h2>
   </div>
 
-  <div class="projects-wrap">
-    <button class="scroll-btn prev" onclick="scrollProjects(-1)" aria-label="Scroll projects left">‹</button>
-    <div class="projects-scroll" id="projectsScroll">
-    <!-- PROJECT CARD TEMPLATE (repeat / replace as you build each one) -->
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
-      </div>
-      <div class="project-body">
-        <h3>Project 1</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
-      </div>
-    </a>
+  <div class="tab-group">
+    <div class="tabs">
+      <button class="tab-btn active" data-target="tab-cyber">Cybersecurity Projects</button>
+      <button class="tab-btn" data-target="tab-academic">Academic Projects</button>
+    </div>
 
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
-      </div>
-      <div class="project-body">
-        <h3>Project 2</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
-      </div>
-    </a>
+    <!-- CYBERSECURITY PROJECTS -->
+    <div class="tab-panel active" id="tab-cyber">
+      <div class="projects-wrap">
+        <button class="scroll-btn prev" aria-label="Scroll projects left">‹</button>
+        <div class="projects-scroll" id="projectsScroll">
 
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
-      </div>
-      <div class="project-body">
-        <h3>Project 3</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
-      </div>
-    </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 1</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
 
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
-      </div>
-      <div class="project-body">
-        <h3>Project 4</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
-      </div>
-    </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 2</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
 
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
-      </div>
-      <div class="project-body">
-        <h3>Project 5</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
-      </div>
-    </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 3</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
 
-    <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
-      <div class="project-preview">
-        <span class="status mono">Coming soon</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 4</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 5</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Project 6</h3>
+              <p>Short description of the project goes here once it's built.</p>
+              <div class="tags"><span>Tool</span><span>Tool</span></div>
+            </div>
+          </a>
+
+        </div>
+        <button class="scroll-btn next" aria-label="Scroll projects right">›</button>
       </div>
-      <div class="project-body">
-        <h3>Project 6</h3>
-        <p>Short description of the project goes here once it's built.</p>
-        <div class="tags"><span>Tool</span><span>Tool</span></div>
+    </div>
+
+    <!-- ACADEMIC PROJECTS -->
+    <div class="tab-panel" id="tab-academic">
+      <div class="projects-wrap">
+        <button class="scroll-btn prev" aria-label="Scroll projects left">‹</button>
+        <div class="projects-scroll">
+
+          <!-- IoT PROJECT -->
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>IoT Project Title</h3>
+              <p>Short description and objective of the IoT project.</p>
+              <div class="project-meta">
+                <span>Role: Your role</span>
+                <span>Status: In progress</span>
+              </div>
+              <div class="tags"><span>Tech</span><span>Tech</span></div>
+            </div>
+          </a>
+
+          <!-- CAPSTONE PROJECT -->
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Capstone Project Title</h3>
+              <p>Short description, objective, and team of the capstone.</p>
+              <div class="project-meta">
+                <span>Role: Your role</span>
+                <span>Status: In progress</span>
+              </div>
+              <div class="tags"><span>Tech</span><span>Tech</span></div>
+            </div>
+          </a>
+
+          <!-- THIRD-YEAR COURSE PROJECT -->
+          <a href="https://github.com/" target="_blank" rel="noopener" class="project-card">
+            <div class="project-preview">
+              <span class="status mono">Coming soon</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Course Project Title</h3>
+              <p>Short description of the project and the course it was for.</p>
+              <div class="project-meta">
+                <span>Role: Your contribution</span>
+                <span>Status: Completed</span>
+              </div>
+              <div class="tags"><span>Tech</span><span>Tech</span></div>
+            </div>
+          </a>
+
+        </div>
+        <button class="scroll-btn next" aria-label="Scroll projects right">›</button>
       </div>
-    </a>
-  </div>
-    <button class="scroll-btn next" onclick="scrollProjects(1)" aria-label="Scroll projects right">›</button>
+    </div>
   </div>
 
   <p class="projects-note">// more projects added as they're finished</p>
+ </div>
+</section>
+
+<!-- ===================== CREDENTIALS ===================== -->
+<section id="credentials">
+ <div class="container">
+  <div class="section-head">
+    <span class="tag mono">Credentials</span>
+    <h2>Certifications, courses, and achievements</h2>
+  </div>
+
+  <div class="tab-group">
+    <div class="tabs">
+      <button class="tab-btn active" data-target="tab-certs">Certifications</button>
+      <button class="tab-btn" data-target="tab-courses">Course Completions</button>
+      <button class="tab-btn" data-target="tab-achievements">Achievements</button>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="tab-panel active" id="tab-certs">
+      <div class="projects-wrap">
+        <button class="scroll-btn prev" aria-label="Previous">‹</button>
+        <div class="projects-scroll">
+
+          <div class="cred-card">
+            <a href="https://drive.google.com/file/d/1wEts_ZxWF_lG7mYxgsaQ54vAIVqL9ShH/view?usp=sharing" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/certs/Word.png" alt="Microsoft Office Specialist: Word 2019 Associate certificate">
+            </a>
+            <h3>Microsoft Office Specialist: Word 2019 Associate</h3>
+            <p class="cred-issuer">Microsoft (Certiport)</p>
+            <p class="cred-date">March 2024</p>
+            <a href="https://drive.google.com/file/d/1wEts_ZxWF_lG7mYxgsaQ54vAIVqL9ShH/view?usp=sharing" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="#" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/certs/cert-2.jpg" alt="Certification Title 2 certificate">
+            </a>
+            <h3>Certification Title 2</h3>
+            <p class="cred-issuer">Issuing organization / platform</p>
+            <p class="cred-date">Month YYYY</p>
+            <a href="#" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="#" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/certs/cert-3.jpg" alt="Certification Title 3 certificate">
+            </a>
+            <h3>Certification Title 3</h3>
+            <p class="cred-issuer">Issuing organization / platform</p>
+            <p class="cred-date">Month YYYY</p>
+            <a href="#" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+        </div>
+        <button class="scroll-btn next" aria-label="Next">›</button>
+      </div>
+    </div>
+
+    <!-- COURSE COMPLETIONS -->
+    <div class="tab-panel" id="tab-courses">
+      <div class="projects-wrap">
+        <button class="scroll-btn prev" aria-label="Previous">‹</button>
+        <div class="projects-scroll">
+
+          <div class="cred-card">
+            <a href="https://drive.google.com/file/d/1y_ptDQgwgw3qR-K7RxmeOJ9s5qLE4vpK/view?usp=sharing" target="_blank" rel="noopener" class="cred-preview badge">
+              <img src="images/courses/JCACP-Badge.png" alt="Junior Cybersecurity Analyst Career Path badge">
+            </a>
+            <h3>Junior Cybersecurity Analyst Career Path</h3>
+            <p class="cred-issuer">Cisco Networking Academy</p>
+            <p class="cred-date">October 2026</p>
+            <a href="https://drive.google.com/file/d/1y_ptDQgwgw3qR-K7RxmeOJ9s5qLE4vpK/view?usp=sharing" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="https://drive.google.com/file/d/1on0IjHlBOYWwgf484NQl0tGyu7yFOcT2/view?usp=sharing" target="_blank" rel="noopener" class="cred-preview badge">
+              <img src="images/courses/ITC-Bagde.png" alt="Cisco Networking Academy Introduction to Cybersecurity badge">
+            </a>
+            <h3>Introduction to Cybersecurity</h3>
+            <p class="cred-issuer">Cisco Networking Academy</p>
+            <p class="cred-date">September 2026</p>
+            <a href="https://drive.google.com/file/d/1on0IjHlBOYWwgf484NQl0tGyu7yFOcT2/view?usp=sharing" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="https://drive.google.com/file/d/1pRqpaFkZEqstFfs2N3wZTbMcLueS-cQv/view?usp=sharing" target="_blank" rel="noopener" class="cred-preview badge">
+              <img src="images/courses/IoT-Badge.png" alt="Introduction to Internet of Things badge">
+            </a>
+            <h3>Introduction to Internet of Things</h3>
+            <p class="cred-issuer">Cisco Networking Academy</p>
+            <p class="cred-date">February 2026</p>
+            <a href="https://drive.google.com/file/d/1pRqpaFkZEqstFfs2N3wZTbMcLueS-cQv/view?usp=sharing" target="_blank" rel="noopener" class="cred-link">View certificate ↗</a>
+          </div>
+
+        </div>
+        <button class="scroll-btn next" aria-label="Next">›</button>
+      </div>
+    </div>
+
+    <!-- OTHER ACHIEVEMENTS -->
+    <div class="tab-panel" id="tab-achievements">
+      <div class="projects-wrap">
+        <button class="scroll-btn prev" aria-label="Previous">‹</button>
+        <div class="projects-scroll">
+
+          <div class="cred-card">
+            <a href="#" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/achievements/achievement-1.jpg" alt="Achievement Title 1 proof">
+            </a>
+            <h3>Achievement Title 1</h3>
+            <p class="cred-date">Month YYYY</p>
+            <p class="cred-desc">Short description of what it was and what you took from it.</p>
+            <a href="#" target="_blank" rel="noopener" class="cred-link">View proof ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="#" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/achievements/achievement-2.jpg" alt="Achievement Title 2 proof">
+            </a>
+            <h3>Achievement Title 2</h3>
+            <p class="cred-date">Month YYYY</p>
+            <p class="cred-desc">Short description of what it was and what you took from it.</p>
+            <a href="#" target="_blank" rel="noopener" class="cred-link">View proof ↗</a>
+          </div>
+
+          <div class="cred-card">
+            <a href="#" target="_blank" rel="noopener" class="cred-preview">
+              <img src="images/achievements/achievement-3.jpg" alt="Achievement Title 3 proof">
+            </a>
+            <h3>Achievement Title 3</h3>
+            <p class="cred-date">Month YYYY</p>
+            <p class="cred-desc">Short description of what it was and what you took from it.</p>
+            <a href="#" target="_blank" rel="noopener" class="cred-link">View proof ↗</a>
+          </div>
+
+        </div>
+        <button class="scroll-btn next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div>
  </div>
 </section>
 
@@ -233,46 +444,7 @@
   <p>&copy; <span id="year"></span> Angelo Sulit. Built while learning cybersecurity, one project at a time.</p>
 </footer>
 
-<script>
-  // mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  // active nav link on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.nav-link');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
-      if (window.scrollY >= top) current = sec.id;
-    });
-    links.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
-  });
-
-  // footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // horizontal project carousel controls
-  function scrollProjects(direction){
-    const track = document.getElementById('projectsScroll');
-    const card = track.querySelector('.project-card');
-    if(!card) return;
-    const gap = 22;
-    const amount = card.offsetWidth + gap;
-    track.scrollBy({left: direction * amount, behavior:'smooth'});
-  }
-
-  // contact form placeholder handler (no backend wired up yet)
-  function handleSubmit(e){
-    e.preventDefault();
-    alert('This form isn\'t connected to anything yet — hook it up to a service like Formspree, EmailJS, or your own backend when you\'re ready.');
-  }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

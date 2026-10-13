@@ -12,7 +12,6 @@
     --accent-soft:rgba(74,127,201,0.10);
     --amber:#6fa8dc;
     --bg-about:#0d1420;
-    --bg-contact:#0f1a26;
     --max-w:1100px;
     --radius:10px;
     --grid-size:64px;
@@ -50,20 +49,20 @@
     padding:0 24px;
   }
 
-  #about{
+  /* ---------- SECTION BACKGROUNDS (alternating) ---------- */
+  /* Light sections: About, Credentials */
+  #about, #credentials{
     background-color:var(--bg-about);
   }
-  #contact{
-    background-color:var(--bg-contact);
-  }
 
-  #home, #projects{
+  /* Dark sections with fading grid: Home, Projects, Contact */
+  #home, #projects, #contact{
     position:relative;
     background-color:var(--bg);
     overflow:hidden;
   }
 
-  #home::before, #projects::before{
+  #home::before, #projects::before, #contact::before{
     content:'';
     position:absolute;
     inset:0;
@@ -76,7 +75,7 @@
   }
 
   .hero-inner{position:relative; z-index:1;}
-  #projects .container{position:relative; z-index:1;}
+  #projects .container, #contact .container{position:relative; z-index:1;}
 
   .section-head{
     margin-bottom:56px;
@@ -102,7 +101,7 @@
     position:fixed;
     top:0; left:0; right:0;
     z-index:100;
-    background:rgba(10,15,13,0.85);
+    background:rgba(9,13,19,0.85);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
   }
@@ -267,33 +266,13 @@
     align-items:start;
   }
 
-  .photo-placeholder{
-    aspect-ratio:1/1;
-    border:1px dashed var(--border);
-    border-radius:var(--radius);
-    background:var(--surface);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    color:var(--text-faint);
-}
-
-  .photo-placeholder svg{width:56px; height:56px; opacity:0.6;}
-
-  .photo-placeholder span{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-  }
-
   .about-photo{
     width:100%;
     aspect-ratio:1/1;
     object-fit:cover;
     border-radius:var(--radius);
     border:1px solid var(--border);
-}
+  }
 
   .about-text p{
     color:var(--text-dim);
@@ -330,6 +309,59 @@
   .chip .label{
     font-size:12.5px;
     color:var(--text-faint);
+  }
+
+  /* ---------- TABS (Projects + Credentials) ---------- */
+  .tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:32px;
+  }
+
+  .tab-btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--text-dim);
+    background:transparent;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 16px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+
+  .tab-btn:hover{color:var(--text); border-color:var(--accent-dim);}
+
+  .tab-btn.active{
+    color:var(--accent);
+    border-color:var(--accent);
+    background:var(--accent-soft);
+  }
+
+  /* All tabs sit in the same grid cell, so the container
+     always takes the height of the tallest tab in the group */
+  .tab-group{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .tabs{grid-row:1;}
+
+  .tab-panel{
+    grid-row:2;
+    grid-column:1;
+    min-width:0;
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.25s ease;
+  }
+
+  .tab-panel.active{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto;
   }
 
   /* ---------- PROJECTS ---------- */
@@ -404,6 +436,16 @@
     min-height:42px;
   }
 
+  .project-meta{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+    margin-bottom:16px;
+  }
+
   .tags{
     display:flex;
     flex-wrap:wrap;
@@ -440,6 +482,16 @@
   .scroll-btn.prev{left:-14px;}
   .scroll-btn.next{right:-14px;}
 
+  .scroll-btn.is-hidden{display:none;}
+  .scroll-btn.is-disabled{opacity:0.35; pointer-events:none;}
+
+  /* blank space after the last card so the final page lines up
+     (for example, 4 cards means the last page shows card 4 alone) */
+  .projects-scroll.has-tail::after{
+    content:'';
+    flex:0 0 var(--tail);
+  }
+
   .projects-note{
     text-align:center;
     color:var(--text-faint);
@@ -447,6 +499,82 @@
     margin-top:36px;
     font-family:'JetBrains Mono', monospace;
   }
+
+  /* ---------- CREDENTIALS ---------- */
+  .cred-card{
+    flex:0 0 calc((100% - 44px)/3);
+    scroll-snap-align:start;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:border-color 0.2s ease;
+  }
+
+  .cred-card:hover{border-color:var(--accent-dim);}
+
+  .cred-preview{
+    display:block;
+    aspect-ratio:3/2;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:linear-gradient(135deg, var(--bg-alt), var(--surface));
+    margin-bottom:6px;
+    font-size:12px;
+    color:var(--text-faint);
+  }
+
+  .cred-preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.3s ease;
+  }
+
+  .cred-preview.badge img{
+    object-fit:contain;
+    padding:14px;
+  }
+
+  .cred-card:hover .cred-preview img{transform:scale(1.04);}
+
+  .cred-card h3{font-size:17px; font-weight:600; line-height:1.35;}
+
+  .cred-badge{
+    align-self:flex-start;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--amber);
+    border:1px solid rgba(111,168,220,0.35);
+    background:rgba(111,168,220,0.08);
+    padding:3px 8px;
+    border-radius:5px;
+  }
+
+  .cred-issuer{font-size:14px; color:var(--text-dim);}
+
+  .cred-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+  }
+
+  .cred-desc{font-size:14px; color:var(--text-dim);}
+
+  .cred-link{
+    margin-top:auto;
+    padding-top:10px;
+    font-size:14px;
+    font-weight:500;
+    color:var(--accent);
+    transition:color 0.2s ease;
+  }
+
+  .cred-link:hover{color:var(--amber);}
 
   /* ---------- CONTACT ---------- */
   .contact-grid{
@@ -539,7 +667,7 @@
   .hero{padding-left:24px; padding-right:24px;}
 
   @media (max-width: 1000px) and (min-width: 761px){
-    .project-card{flex:0 0 calc((100% - 22px)/2);}
+    .project-card, .cred-card{flex:0 0 calc((100% - 22px)/2);}
   }
 
   @media (max-width: 760px){
@@ -560,10 +688,10 @@
     }
     .nav-toggle{display:flex;}
     .about-grid{grid-template-columns:1fr;}
-    .photo-placeholder{max-width:280px; margin:0 auto;}
+    .about-photo{max-width:280px; margin:0 auto;}
     .contact-grid{grid-template-columns:1fr;}
     .info-chips{grid-template-columns:1fr 1fr;}
-    .project-card{flex:0 0 85%;}
+    .project-card, .cred-card{flex:0 0 85%;}
     .scroll-btn{display:none;}
     section{padding:80px 20px;}
   }
