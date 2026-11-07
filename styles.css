@@ -397,7 +397,7 @@
   }
 
   .project-preview{
-    aspect-ratio:16/10;
+    aspect-ratio:16/7.65;
     background:
       linear-gradient(135deg, var(--bg-alt), var(--surface));
     display:flex;
@@ -405,6 +405,7 @@
     justify-content:center;
     border-bottom:1px solid var(--border);
     position:relative;
+    
   }
 
   .project-preview svg{width:34px; height:34px; color:var(--text-faint);}
@@ -653,6 +654,14 @@
   }
 
   .btn-submit:hover{background:#6ba0dc;}
+
+  .form-status{
+    margin-top:14px;
+    font-size:14px;
+    min-height:20px;
+  }
+  .form-status.success{color:var(--amber);}
+  .form-status.error{color:#e5757a;}
 
   footer{
     border-top:1px solid var(--border);

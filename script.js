@@ -107,7 +107,33 @@ document.querySelectorAll('.tab-group').forEach(group => {
 });
 
 // contact form placeholder handler (no backend wired up yet)
-function handleSubmit(e){
+// contact form (sends through Formspree)
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  alert('This form isn\'t connected to anything yet — hook it up to a service like Formspree, EmailJS, or your own backend when you\'re ready.');
-}
+  const btn = contactForm.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  formStatus.className = 'form-status';
+  formStatus.textContent = '';
+
+  try {
+    const res = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: {'Accept': 'application/json'}
+    });
+    if (!res.ok) throw new Error('Request failed');
+    formStatus.textContent = 'Thanks! Your message was sent.';
+    formStatus.classList.add('success');
+    contactForm.reset();
+  } catch (err) {
+    formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+    formStatus.classList.add('error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
